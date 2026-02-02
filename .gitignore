@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.env
+database/pharmacy.db
+*.db
+.DS_Store
+Thumbs.db

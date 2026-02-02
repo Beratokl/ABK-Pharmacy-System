@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABK Pharmacy System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>ABK Pharmacy Management System</h1>
+                <div class="header-actions">
+                    <span id="username-display"></span>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+            </div>
+            <nav>
+                <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+                <button class="nav-btn" data-section="inventory">Inventory</button>
+                <button class="nav-btn" data-section="receiving">Receiving</button>
+                <button class="nav-btn" data-section="sales">Sales</button>
+                <button class="nav-btn" data-section="scanner">Scanner</button>
+                <button class="nav-btn" data-section="personnel">Personnel</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <h2>Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Items</h3>
+                        <span id="total-items">0</span>
+                    </div>
+                    <div class="stat-card alert">
+                        <h3>Low Stock Alerts</h3>
+                        <span id="low-stock-count">0</span>
+                    </div>
+                    <div class="stat-card warning">
+                        <h3>Expiring Soon</h3>
+                        <span id="expiring-count">0</span>
+                    </div>
+                    <div class="stat-card revenue">
+                        <h3>Today's Revenue</h3>
+                        <span id="daily-revenue">$0</span>
+                    </div>
+                </div>
+                <div class="alerts-section">
+                    <h3>Recent Alerts</h3>
+                    <div id="alerts-list"></div>
+                </div>
+            </section>
+
+            <!-- Inventory Section -->
+            <section id="inventory" class="section">
+                <h2>Inventory Management</h2>
+                <button class="btn-primary" onclick="showAddItemForm()">Add New Item</button>
+                <div id="inventory-table"></div>
+            </section>
+
+            <!-- Sales Section -->
+            <section id="sales" class="section">
+                <h2>Sales Management</h2>
+                <button class="btn-primary" onclick="showSaleForm()">Record Sale</button>
+                <div id="sales-table"></div>
+            </section>
+
+            <!-- Receiving Section -->
+            <section id="receiving" class="section">
+                <h2>Receiving</h2>
+                <button class="btn-primary" onclick="showReceivingForm()">Record Receiving</button>
+                <div id="receiving-table"></div>
+            </section>
+
+            <!-- Scanner Section -->
+            <section id="scanner" class="section">
+                <h2>Barcode Scanner</h2>
+                <div class="scanner-container">
+                    <div class="scan-input">
+                        <input type="text" id="barcode-input" placeholder="Scan or enter barcode..." autofocus>
+                        <button onclick="scanBarcode()" class="btn-primary">Search</button>
+                    </div>
+                    <div id="scan-result"></div>
+                </div>
+            </section>
+
+            <!-- Personnel Section -->
+            <section id="personnel" class="section">
+                <h2>Personnel Management</h2>
+                <button class="btn-primary" onclick="showAddPersonnelForm()">Add Personnel</button>
+                <div id="personnel-table"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for forms -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
