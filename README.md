@@ -59,15 +59,6 @@ node complete-setup.js
 npm start
 ```
 
-### Access the System
-
-🌐 **Web Interface:** [http://localhost:3000](http://localhost:3000)
-
-**Default Credentials:**
-- **Admin:** `admin` / `admin123`
-- **Pharmacist:** `pharmacist` / `pharma123`
-- **Technician:** `tech` / `tech123`
-
 Technology Stack
 
 - **Backend:** Node.js, Express.js
